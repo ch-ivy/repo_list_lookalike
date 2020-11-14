@@ -532,6 +532,12 @@ nav .nav-link {
    .emoji {
       display: none;
    }
+   .list-item .top h3 {
+      font-size: 1.1em;
+   }
+   .star-btn .btn {
+      padding: 4px 12px;
+   }
 }
 
 /* ========footer========== */

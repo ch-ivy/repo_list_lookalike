@@ -5,8 +5,6 @@ window.onload = async (event) => {
    await api();
    info = repoData.data.user;
    repo_list = repoData.data.user.repositories.nodes;
-   console.log(repo_list);
-
    fill();
 };
 
@@ -15,7 +13,7 @@ async function api() {
    await fetch(api, {
       method: "POST",
       headers: {
-         Authorization: "bearer 639c2f9a205dec5502fdbe6627287806dd8067c5",
+         Authorization: "bearer 6417f7a07a514f07358fad26436610e3b81929da",
          "Content-Type": "application/json",
       },
       body: JSON.stringify({

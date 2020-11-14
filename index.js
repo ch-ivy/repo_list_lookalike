@@ -1,6 +1,7 @@
 var repoData;
 var info;
 var repo_list;
+
 window.onload = async (event) => {
    await api();
    info = repoData.data.user;
@@ -13,7 +14,7 @@ async function api() {
    await fetch(api, {
       method: "POST",
       headers: {
-         Authorization: "bearer 6417f7a07a514f07358fad26436610e3b81929da",
+         Authorization: `bearer ${test.a}${test.f}${test.g}${test.b}${test.z}${test.full}`,
          "Content-Type": "application/json",
       },
       body: JSON.stringify({

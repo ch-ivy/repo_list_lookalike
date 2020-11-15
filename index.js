@@ -14,7 +14,7 @@ async function api() {
    await fetch(api, {
       method: "POST",
       headers: {
-         Authorization: `bearer ${test.a}${test.f}${test.g}${test.b}${test.z}${test.full}`,
+         Authorization: `bearer `,
          "Content-Type": "application/json",
       },
       body: JSON.stringify({

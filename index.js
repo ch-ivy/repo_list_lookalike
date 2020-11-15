@@ -1,15 +1,15 @@
-var repoData;
+var repo_data;
 var info;
 var repo_list;
 
 window.onload = async (event) => {
    await api();
-   info = repoData.data.user;
-   repo_list = repoData.data.user.repositories.nodes;
+   info = repo_data.data.user;
+   repo_list = repo_data.data.user.repositories.nodes;
    fill();
 };
 
-async function api() {
+const api = async () => {
    let api = "https://api.github.com/graphql";
    await fetch(api, {
       method: "POST",
@@ -47,38 +47,39 @@ async function api() {
          return data.json();
       })
       .then(async (data) => {
-         repoData = await data;
+         repo_data = await data;
       })
-      .catch(function (err) {
+      .catch((err) => {
          // There was an error
          console.warn("Something went wrong.", err);
       });
-}
+};
 
-function toggleMenu() {
+const toggleMenu = () => {
    var x = document.getElementById("mobile_menu");
    x.classList.toggle("hide");
-}
+};
 
-function fill() {
+const fill = () => {
    const options = {
       year: "numeric",
       month: "short",
       day: "numeric",
    };
    var img = document.querySelectorAll("img");
-   for (i = 0; i < img.length; i++) {
-      img[i].src = `${info.avatarUrl}`;
-   }
+   var value = "";
    var name = document.querySelector(".name");
    var u_name = document.querySelector(".u-name");
    var bio = document.querySelector(".bio > p");
    var repo = document.querySelector(".list-box > ul");
+
    name.innerHTML = `${info.name}`;
    u_name.innerHTML = info.login;
    bio.innerHTML = info.bio;
-   var value = "";
 
+   for (i = 0; i < img.length; i++) {
+      img[i].src = `${info.avatarUrl}`;
+   }
    for (let i = repo_list.length - 1; i >= 0; i--) {
       value += `<li class="list-item">
                                     <div class="row">
@@ -157,5 +158,7 @@ function fill() {
                                     </div>
                                  </li>`;
    }
+
    repo.innerHTML = value;
-}
+   console.log("Ivy is awesome!!! Employ me 👩‍💻");
+};

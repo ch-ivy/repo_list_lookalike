@@ -20,7 +20,7 @@ body {
    padding-right: 2em;
    margin-right: auto;
    margin-left: auto;
-   max-width: 1428px;
+   max-width: 95vw;
    position: relative;
 }
 .col-3,
@@ -428,6 +428,8 @@ nav .nav-link {
    font-size: 1.4em;
    margin: 0;
    width: fit-content;
+   word-break: break-word;
+   padding-right: 5px;
 }
 .list-item .top h3:hover {
    text-decoration: underline;

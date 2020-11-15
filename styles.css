@@ -309,7 +309,7 @@ nav .nav-link {
    position: relative;
    text-align: center;
    margin: auto;
-   padding: 5px 7px;
+   padding: 4px 5px;
    transition: all 0.1s;
    display: flex;
 }
